@@ -51,11 +51,13 @@ Mux::Client.delete_asset("MUX_ASSET_ID")
 ### Fetching asset
 
 Fetch an asset using the `Mux::Client.destroy_asset(asset_id)` method, passing
-the asset id:
+the asset id. This returns a
+[JSON object](https://docs.mux.com/docs/webhooks#section-example-response):
 
 ```ruby
 asset = Mux::Client.get_asset("MUX_ASSET_ID")
 puts asset.data.status
+# Example response: https://docs.mux.com/docs/webhooks#section-example-response
 ```
 
 ### Handling webhook requests
@@ -71,6 +73,10 @@ Mux::Notifications.subscribe "video.asset.created", MuxAssetCreated.new
 Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
 Mux::Notifications.subscribe "video.asset.deleted", MuxAssetReady.new
 ```
+
+The subscriber receives is passed an event which is simply the incoming
+[JSON](https://docs.mux.com/docs/webhooks#section-example-response) wrapped in
+an OpenStruct for ease of access:
 
 ```ruby
 # app/subscribers/mux_asset_ready.rb
