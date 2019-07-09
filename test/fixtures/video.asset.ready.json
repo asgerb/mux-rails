@@ -29,9 +29,17 @@
       }
     ],
     "status": "ready",
+    "playback_ids": [
+      {
+        "policy": "public",
+        "id": "foo"
+      }
+    ],
+    "mp4_support": "none",
     "max_stored_resolution": "SD",
     "max_stored_frame_rate": 23.976,
     "id": "0201p02fGKPE7MrbC269XRD7LpcHhrmbu0002",
+    "master_access": "none",
     "duration": 153.361542,
     "created_at": "2018-02-15T01:04:45.000Z",
     "aspect_ratio": "40:17"
