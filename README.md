@@ -23,7 +23,9 @@ To create a Mux asset use the `Mux::Client.create_action(url)` method, passing
 in the url to the video. The method returns a Mux asset id.
 
 ```ruby
-Mux::Client.create_asset("http://foo.com/bar.mp4") #=> "MUX_ASSET_ID"
+mux_asset_id = Mux::Client.create_asset("http://foo.com/bar.mp4")
+
+# store the mux_asset_id somewhere for future reference
 ```
 
 ### Handling webhook requests
@@ -44,6 +46,7 @@ Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
 class MuxAssetReady
   def call(event)
     # event handling
+    # event.id == mux_asset_id
   end
 end
 ```
