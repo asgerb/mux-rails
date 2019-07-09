@@ -16,6 +16,7 @@ module Mux
         assets_api.delete_asset(asset_id, options)
       end
 
+      # TODO: Figure out if and how to wrap the response
       def get_asset(asset_id, options = {})
         assets_api.get_asset(asset_id, options)
       end
