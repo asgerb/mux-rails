@@ -73,8 +73,8 @@ Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
 Mux::Notifications.subscribe "video.asset.deleted", MuxAssetReady.new
 ```
 
-The subscriber is passed an event which is simply the incoming JSON (see 
-`test/fixtures` for examples) wrapped in an OpenStruct for ease of access:
+The subscriber is passed an event which is simply the incoming JSON (take a peek
+in [fixtures](test/fixtures) for examples) wrapped in an OpenStruct for ease of access:
 
 ```ruby
 # app/subscribers/mux_asset_ready.rb
