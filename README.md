@@ -45,7 +45,7 @@ Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
 class MuxAssetReady
   def call(event)
     # event handling
-    # event.id == mux_asset_id
+    # event.object.id == mux_asset_id
   end
 end
 ```
