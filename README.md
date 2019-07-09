@@ -19,12 +19,31 @@ end
 
 ### Creating assets
 
-To create a Mux asset use the `Mux::Client.create_action(url)` method, passing
-in the url to the video. The method returns a Mux asset id.
+Create a Mux asset by using the `Mux::Client.create_asset(url)` method, passing
+the url to the video. The method returns a Mux asset id.
 
 ```ruby
 mux_asset_id = Mux::Client.create_asset("http://foo.com/bar.mp4")
 # You probably want to store mux_asset_id somewhere for future reference
+```
+
+### Deleting assets
+
+Delete an asset using the `Mux::Client.destroy_asset(asset_id)` method, passing
+the asset id:
+
+```ruby
+Mux::Client.delete_asset("MUX_ASSET_ID")
+```
+
+### Fetching asset
+
+Fetch an asset using the `Mux::Client.destroy_asset(asset_id)` method, passing
+the asset id:
+
+```ruby
+asset = Mux::Client.get_asset("MUX_ASSET_ID")
+puts asset.data.status
 ```
 
 ### Handling webhook requests
@@ -36,7 +55,9 @@ events from Mux and do further work:
 # config/initializers/mux.rb
 # ...
 
+Mux::Notifications.subscribe "video.asset.created", MuxAssetCreated.new
 Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
+Mux::Notifications.subscribe "video.asset.deleted", MuxAssetReady.new
 ```
 
 ```ruby
@@ -46,6 +67,7 @@ class MuxAssetReady
   def call(event)
     # event handling
     # event.object.id == mux_asset_id
+    # event.data.playback_ids.first.id
   end
 end
 ```
