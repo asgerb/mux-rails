@@ -61,8 +61,8 @@ puts asset.data.status
 
 ### Handling webhook requests
 
-Using a subscriber (an object which responds to `#call`) we can then listen to
-events from Mux and do further work:
+Using a subscriber (an object which responds to `#call`) we can listen to
+incoming events from Mux and do further work:
 
 ```ruby
 # config/initializers/mux.rb
@@ -73,8 +73,8 @@ Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
 Mux::Notifications.subscribe "video.asset.deleted", MuxAssetReady.new
 ```
 
-The subscriber receives is passed an event which is simply the incoming JSON
-(see `test/fixtures` for examples) wrapped in an OpenStruct for ease of access:
+The subscriber is passed an event which is simply the incoming JSON (see 
+`test/fixtures` for examples) wrapped in an OpenStruct for ease of access:
 
 ```ruby
 # app/subscribers/mux_asset_ready.rb
