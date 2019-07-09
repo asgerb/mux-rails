@@ -37,8 +37,8 @@ describe Mux::Notifications do
     end
   end
 
-  def stub_event(identifier)
-    payload = JSON.parse(File.read(Mux::Engine.root.join("test/fixtures/#{identifier}.json")))
+  def stub_event(event_type)
+    payload = JSON.parse(File.read(Mux::Engine.root.join("test/fixtures/#{event_type}.json")), object_class: OpenStruct)
     Mux::Event.new(payload)
   end
 end

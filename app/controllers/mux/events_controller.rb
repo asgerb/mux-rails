@@ -13,8 +13,8 @@ module Mux
     private
 
     def event
-      payload = JSON.parse(request.body.read, symbolize_names: true)
-      Mux::Event.new(payload)
+      event = JSON.parse(request.body.read, object_class: OpenStruct)
+      Mux::Event.new(event)
     end
   end
 end
