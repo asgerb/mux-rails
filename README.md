@@ -4,6 +4,18 @@ A Rails Engine for working with [Mux](https://mux.com/).
 Use `Mux::Client` to create assets and `Mux::Notifications` (built on the
 `ActiveSupport::Notifications` API) to handle incoming webhook requests.
 
+## Installation
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'mux-rails'
+```
+
+```ruby
+# config/routes.rb
+mount Mux::Engine, at: "/mux" # provide a custom path
+```
+
 ## Usage
 
 ### Setup Mux tokens
@@ -70,23 +82,6 @@ class MuxAssetReady
     # event.data.playback_ids.first.id
   end
 end
-```
-
-## Installation
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'mux-rails'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install mux-rails
 ```
 
 ## Contributing
