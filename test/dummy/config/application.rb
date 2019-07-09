@@ -1,6 +1,10 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "action_controller/railtie"
+require "action_view/railtie"
+require "active_job/railtie"
+require "rails/test_unit/railtie"
+require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 require "mux/rails"
@@ -16,4 +20,3 @@ module Dummy
     # the framework and any gems in your application.
   end
 end
-
