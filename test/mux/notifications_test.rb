@@ -17,11 +17,13 @@ describe Mux::Notifications do
   describe "subscribing to a namespace of event types" do
     it "calls the subscriber with any events in the namespace" do
       video_asset_ready = stub_event("video.asset.ready")
+      video_asset_created = stub_event("video.asset.created")
       events = []
       subscriber = ->(evt){ events << evt }
 
       Mux::Notifications.subscribe("video.asset.", subscriber)
       Mux::Notifications.instrument(video_asset_ready)
+      Mux::Notifications.instrument(video_asset_created)
 
       events.must_include video_asset_ready
     end
