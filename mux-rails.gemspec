@@ -19,5 +19,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 5.2.3"
   spec.add_dependency "mux_ruby", "~> 1.0.0"
 
+  spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency "minitest-rails"
   spec.add_development_dependency "sqlite3"
 end
