@@ -24,8 +24,7 @@ in the url to the video. The method returns a Mux asset id.
 
 ```ruby
 mux_asset_id = Mux::Client.create_asset("http://foo.com/bar.mp4")
-
-# store the mux_asset_id somewhere for future reference
+# You probably want to store mux_asset_id somewhere for future reference
 ```
 
 ### Handling webhook requests
