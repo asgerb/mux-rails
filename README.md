@@ -45,7 +45,7 @@ Delete an asset using the `Mux::Client.destroy_asset(asset_id)` method, passing
 the asset id:
 
 ```ruby
-Mux::Client.delete_asset("MUX_ASSET_ID")
+Mux::Client.delete_asset("mux_asset_id")
 ```
 
 ### Fetching asset
@@ -55,7 +55,7 @@ the asset id. This returns a
 [JSON object](https://docs.mux.com/docs/webhooks#section-example-response):
 
 ```ruby
-asset = Mux::Client.get_asset("MUX_ASSET_ID")
+asset = Mux::Client.get_asset("mux_asset_id")
 puts asset.data.status
 ```
 
