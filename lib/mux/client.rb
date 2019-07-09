@@ -12,6 +12,14 @@ module Mux
         return response.data.id
       end
 
+      def destroy_asset(asset_id, options = {})
+        assets_api.delete_asset(asset_id, options)
+      end
+
+      def get_asset(asset_id, options = {})
+        assets_api.get_asset(asset_id, options)
+      end
+
       private
 
       def assets_api
