@@ -5,8 +5,8 @@ describe Mux::Event do
     event_type = "video.asset.ready"
     event = Mux::Event.new(stub_event(event_type))
 
-    event.type.must_equal event_type
-    event.object.must_respond_to :id
+    _(event.type).must_equal event_type
+    _(event.object).must_respond_to :id
   end
 
   def stub_event(event_type)

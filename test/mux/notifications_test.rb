@@ -5,12 +5,13 @@ describe Mux::Notifications do
     it "calls the subscriber with the retrieved event" do
       video_asset_ready = stub_event("video.asset.ready")
       events = []
-      subscriber = ->(evt){ events << evt }
 
-      Mux::Notifications.subscribe("video.asset.ready", subscriber)
+      Mux::Notifications.subscribe("video.asset.ready") do |event|
+        events << event
+      end
       Mux::Notifications.instrument(video_asset_ready)
 
-      events.must_include video_asset_ready
+      _(events).must_include video_asset_ready
     end
   end
 
@@ -19,13 +20,14 @@ describe Mux::Notifications do
       video_asset_ready = stub_event("video.asset.ready")
       video_asset_created = stub_event("video.asset.created")
       events = []
-      subscriber = ->(evt){ events << evt }
 
-      Mux::Notifications.subscribe("video.asset.", subscriber)
+      Mux::Notifications.subscribe("video.asset.") do |event|
+        events << event
+      end
       Mux::Notifications.instrument(video_asset_ready)
       Mux::Notifications.instrument(video_asset_created)
 
-      events.must_include video_asset_ready
+      _(events).must_include video_asset_ready
     end
   end
 
