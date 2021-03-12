@@ -25,7 +25,6 @@ mount Mux::Engine, at: "/mux" # provide a custom path
 
 ```ruby
 # config/initializers/mux.rb
-# QUESTION: Do we want our own wrapper around this instead of exposing a dependency's config?
 MuxRuby.configure do |config|
   config.username = ENV["MUX_TOKEN_ID"]
   config.password = ENV["MUX_TOKEN_SECRET"]
@@ -64,35 +63,33 @@ puts asset.data.status
 
 ### Handling webhook requests
 
-Using a subscriber (an object which responds to `#call`) we can listen to
-incoming events from Mux and do further work:
+Using a subscriber with a block we can listen to incoming events from Mux and do further work:
 
 ```ruby
 # config/initializers/mux.rb
 # ...
 
-Mux::Notifications.subscribe "video.asset.created", MuxAssetCreated.new
-Mux::Notifications.subscribe "video.asset.ready", MuxAssetReady.new
-Mux::Notifications.subscribe "video.asset.deleted", MuxAssetReady.new
-```
+Mux::Notifications.subscribe "video.asset.created" do |event|
+  # handle asset created
+  # event.object.id == mux_asset_id
+  # event.data.playback_ids.first.id
+end
 
-The subscriber is passed an event which is simply the incoming JSON (take a peek
-in [fixtures](test/fixtures) for examples) wrapped in an OpenStruct for ease of access:
+Mux::Notifications.subscribe "video.asset.ready" do |event|
+  # handle asset ready
+  # event.object.id == mux_asset_id
+  # event.data.playback_ids.first.id
+end
 
-```ruby
-# app/subscribers/mux_asset_ready.rb
-
-class MuxAssetReady
-  def call(event)
-    # event handling
-    # event.object.id == mux_asset_id
-    # event.data.playback_ids.first.id
-  end
+Mux::Notifications.subscribe "video.asset.deleted" do |event|
+  # handle asset deleted
+  # event.object.id == mux_asset_id
+  # event.data.playback_ids.first.id
 end
 ```
 
-## Contributing
-Contribution directions go here.
+The block is passed an event which is simply the incoming JSON (take a peek
+in [fixtures](test/fixtures) for examples) wrapped in an OpenStruct for ease of access.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
