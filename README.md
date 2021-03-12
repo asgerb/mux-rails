@@ -1,4 +1,7 @@
 # Mux::Rails
+
+![Ruby](https://github.com/asgerb/mux-rails/workflows/Ruby/badge.svg)
+
 A Rails Engine for working with [Mux](https://mux.com/).
 
 Use `Mux::Client` to create assets and `Mux::Notifications` (built on the
