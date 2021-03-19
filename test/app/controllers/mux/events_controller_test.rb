@@ -7,8 +7,8 @@ describe Mux::EventsController do
 
     post mux.events_path, params: stub_event("video.asset.ready"), as: :json
 
-    response.code.must_equal "200"
-    count.must_equal 1
+    _(response.code).must_equal "200"
+    _(count).must_equal 1
   end
 
   def stub_event(identifier)
