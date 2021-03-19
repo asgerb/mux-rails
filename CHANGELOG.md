@@ -2,7 +2,7 @@
 
 ## 2021-03-12
 
-* compatibilty with Rails 6
-* upgrade Mux to 1.8
-* add GitHub Actions
-* refactor subscriptions to blocks
+- Added compatibilty with Rails 6
+- Added GitHub Actions
+- Upgraded Mux to 1.8
+- Refactored subscriptions to blocks
