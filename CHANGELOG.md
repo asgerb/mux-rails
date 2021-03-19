@@ -1,6 +1,6 @@
-# Changelog
+# Next
 
-## 2021-03-12
+# 0.2.0
 
 - Added compatibilty with Rails 6
 - Added GitHub Actions
