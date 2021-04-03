@@ -1,12 +1,57 @@
 module Mux
-  class Event
-    # QUESTION: Is there security concerns here? This implementation seems very naive ;-)
-    def initialize(payload)
-      @event = OpenStruct.new(payload)
+  class Event < Dry::Struct
+    module Types
+      include Dry.Types()
     end
 
-    def method_missing(method, *args, &block)
-      @event.send(method, *args, &block)
+    transform_keys(&:to_sym)
+
+    attribute :type, Types::String
+    attribute :id, Types::String
+    attribute :created_at, Types::JSON::Time
+
+    attribute :object do
+      attribute :type, Types::String
+      attribute :id, Types::String
+    end
+
+    attribute :environment do
+      attribute :name, Types::String
+      attribute :id, Types::String
+    end
+
+    attribute :data do
+      attribute :id, Types::String
+      attribute :status, Types::String
+      attribute :created_at, Types::JSON::Time
+
+      attribute? :aspect_ratio, Types::String.optional
+      attribute? :duration, Types::Float.optional
+      attribute? :master_access, Types::String.optional
+      attribute? :max_stored_frame_rate, Types::Float.optional
+      attribute? :max_stored_resolution, Types::String.optional
+      attribute? :mp4_support, Types::String.optional
+
+      attribute? :playback_ids, Types::Array do
+        attribute :id, Types::String
+        attribute :policy, Types::String
+      end
+
+      attribute? :tracks, Types::Array do
+        attribute :id, Types::String
+        attribute :type, Types::String
+
+        attribute :duration, Types::Float
+
+        # when type = "video"
+        attribute? :max_width, Types::Integer
+        attribute? :max_height, Types::Integer
+        attribute? :max_frame_rate, Types::Float
+
+        # when type = "audio"
+        attribute? :max_channels, Types::Integer
+        attribute? :max_channel_layout, Types::String
+      end
     end
   end
 end

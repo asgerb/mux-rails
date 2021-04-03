@@ -71,25 +71,23 @@ Using a subscriber with a block we can listen to incoming events from Mux and do
 
 Mux::Notifications.subscribe "video.asset.created" do |event|
   # handle asset created
-  # event.object.id == mux_asset_id
-  # event.data.playback_ids.first.id
+  # event.id == mux_asset_id
 end
 
 Mux::Notifications.subscribe "video.asset.ready" do |event|
   # handle asset ready
-  # event.object.id == mux_asset_id
-  # event.data.playback_ids.first.id
+  # event.id == mux_asset_id
 end
 
 Mux::Notifications.subscribe "video.asset.deleted" do |event|
   # handle asset deleted
-  # event.object.id == mux_asset_id
-  # event.data.playback_ids.first.id
+  # event.id == mux_asset_id
 end
 ```
 
 The block is passed an event which is simply the incoming JSON (take a peek
-in [fixtures](test/fixtures) for examples) wrapped in an OpenStruct for ease of access.
+in [fixtures](test/fixtures) for examples) wrapped in [`Mux::Event`](lib/mux/event.rb) class based on
+`Dry::Struct`.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
