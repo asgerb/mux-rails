@@ -23,8 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dry-struct", "~> 1.0"
   spec.add_dependency "dry-types", "~> 1.4"
 
-  spec.add_dependency "zeitwerk", "~> 2.4"
-
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-rails"
   spec.add_development_dependency "sqlite3"
