@@ -8,18 +8,18 @@ module Mux
 
     transform_keys(&:to_sym)
 
-    attribute :type, Types::String
     attribute :id, Types::String
+    attribute :type, Types::String
     attribute :created_at, Types::JSON::Time
 
     attribute :object do
-      attribute :type, Types::String
       attribute :id, Types::String
+      attribute :type, Types::String
     end
 
     attribute :environment do
-      attribute :name, Types::String
       attribute :id, Types::String
+      attribute :name, Types::String
     end
 
     attribute :data do
