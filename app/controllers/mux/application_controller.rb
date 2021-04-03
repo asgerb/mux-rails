@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mux
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
