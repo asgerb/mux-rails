@@ -19,6 +19,8 @@ gem 'mux-rails'
 mount Mux::Engine, at: "/mux" # provide a custom path
 ```
 
+Make sure to configure the webhooks at mux.com to point to `https://yourwebsite.com/mux/events`.
+
 ## Usage
 
 ### Setup Mux tokens
