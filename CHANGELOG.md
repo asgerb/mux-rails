@@ -1,5 +1,8 @@
 # Next
 
+- Refactor Mux::Event class to Dry::Struct
+- add Rubocop and clean up all files
+
 # 0.2.0
 
 - Added compatibilty with Rails 6
