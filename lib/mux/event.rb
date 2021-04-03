@@ -13,46 +13,46 @@ module Mux
     attribute :created_at, Types::JSON::Time
 
     attribute :object do
-      attribute :id, Types::String
-      attribute :type, Types::String
+      attribute :id, Types::Coercible::String
+      attribute :type, Types::Coercible::String
     end
 
     attribute :environment do
-      attribute :id, Types::String
-      attribute :name, Types::String
+      attribute :id, Types::Coercible::String
+      attribute :name, Types::Coercible::String
     end
 
     attribute :data do
-      attribute :id, Types::String
-      attribute :status, Types::String
-      attribute :created_at, Types::JSON::Time
+      attribute :id, Types::Coercible::String
+      attribute :status, Types::Coercible::String
+      attribute :created_at, Types::Coercible::Integer
 
-      attribute? :aspect_ratio, Types::String
-      attribute? :duration, Types::Float
-      attribute? :master_access, Types::String
-      attribute? :max_stored_frame_rate, Types::Float
-      attribute? :max_stored_resolution, Types::String
-      attribute? :mp4_support, Types::String
+      attribute? :aspect_ratio, Types::Coercible::String
+      attribute? :duration, Types::Coercible::Float
+      attribute? :master_access, Types::Coercible::String
+      attribute? :max_stored_frame_rate, Types::Coercible::Float
+      attribute? :max_stored_resolution, Types::Coercible::String
+      attribute? :mp4_support, Types::Coercible::String
 
       attribute? :playback_ids, Types::Array do
-        attribute :id, Types::String
-        attribute :policy, Types::String
+        attribute :id, Types::Coercible::String
+        attribute :policy, Types::Coercible::String
       end
 
       attribute? :tracks, Types::Array do
-        attribute :id, Types::String
-        attribute :type, Types::String
+        attribute :id, Types::Coercible::String
+        attribute :type, Types::Coercible::String
 
-        attribute :duration, Types::Float
+        attribute :duration, Types::Coercible::Float
 
         # when type = "video"
-        attribute? :max_width, Types::Integer
-        attribute? :max_height, Types::Integer
-        attribute? :max_frame_rate, Types::Float
+        attribute? :max_width, Types::Coercible::Integer
+        attribute? :max_height, Types::Coercible::Integer
+        attribute? :max_frame_rate, Types::Coercible::Float
 
         # when type = "audio"
-        attribute? :max_channels, Types::Integer
-        attribute? :max_channel_layout, Types::String
+        attribute? :max_channels, Types::Coercible::Integer
+        attribute? :max_channel_layout, Types::Coercible::String
       end
     end
   end
