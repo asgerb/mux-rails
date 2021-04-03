@@ -27,12 +27,12 @@ module Mux
       attribute :status, Types::String
       attribute :created_at, Types::JSON::Time
 
-      attribute? :aspect_ratio, Types::String.optional
-      attribute? :duration, Types::Float.optional
-      attribute? :master_access, Types::String.optional
-      attribute? :max_stored_frame_rate, Types::Float.optional
-      attribute? :max_stored_resolution, Types::String.optional
-      attribute? :mp4_support, Types::String.optional
+      attribute? :aspect_ratio, Types::String
+      attribute? :duration, Types::Float
+      attribute? :master_access, Types::String
+      attribute? :max_stored_frame_rate, Types::Float
+      attribute? :max_stored_resolution, Types::String
+      attribute? :mp4_support, Types::String
 
       attribute? :playback_ids, Types::Array do
         attribute :id, Types::String
