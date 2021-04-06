@@ -10,7 +10,13 @@ Use `Mux::Client` to create assets and `Mux::Notifications` (built on the
 
 ## Installation
 
-Run `bundle add mux-rails` or add this line to your application's Gemfile:
+Run
+
+```bash
+bundle add mux-rails
+`
+
+or add this line to your application's Gemfile:
 
 ```ruby
 gem 'mux-rails'
