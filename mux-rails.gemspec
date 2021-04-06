@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
@@ -18,8 +20,11 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 5.0"
   spec.add_dependency "mux_ruby", "~> 1.8.0"
+  spec.add_dependency "dry-struct", "~> 1.0"
+  spec.add_dependency "dry-types", "~> 1.4"
 
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-rails"
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "rubocop-rails_config"
 end

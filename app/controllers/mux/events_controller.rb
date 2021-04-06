@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mux
   class EventsController < ActionController::Base
     # QUESTION: Is this the right way to handle it?
@@ -11,10 +13,10 @@ module Mux
     end
 
     private
-
-    def event
-      event = JSON.parse(request.body.read, object_class: OpenStruct)
-      Mux::Event.new(event)
-    end
+      def event
+        Mux::Event.new(
+          JSON.parse(request.body.read)
+        )
+      end
   end
 end

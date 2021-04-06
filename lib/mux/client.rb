@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "mux_ruby"
 
 module Mux
@@ -9,7 +11,7 @@ module Mux
         request.input = url
         request.playback_policy = MuxRuby::PlaybackPolicy.build_from_hash(playback_policy)
         response = assets_api.create_asset(request)
-        return response.data.id
+        response.data.id
       end
 
       def destroy_asset(asset_id, options = {})
@@ -22,10 +24,9 @@ module Mux
       end
 
       private
-
-      def assets_api
-        @assets_api ||= MuxRuby::AssetsApi.new
-      end
+        def assets_api
+          @assets_api ||= MuxRuby::AssetsApi.new
+        end
     end
   end
 end
