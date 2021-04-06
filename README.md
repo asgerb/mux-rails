@@ -14,7 +14,7 @@ Run
 
 ```bash
 bundle add mux-rails
-`
+```
 
 or add this line to your application's Gemfile:
 
