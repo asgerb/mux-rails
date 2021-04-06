@@ -9,7 +9,8 @@ Use `Mux::Client` to create assets and `Mux::Notifications` (built on the
 `ActiveSupport::Notifications` API) to handle incoming webhook requests.
 
 ## Installation
-Add this line to your application's Gemfile:
+
+Run `bundle add mux-rails` or add this line to your application's Gemfile:
 
 ```ruby
 gem 'mux-rails'
