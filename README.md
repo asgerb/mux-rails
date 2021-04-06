@@ -24,14 +24,14 @@ gem 'mux-rails'
 
 and run `bundle install`.
 
-Mount the engine in your routes:
+Then mount the engine in your routes:
 
 ```ruby
 # config/routes.rb
 mount Mux::Engine, at: "/mux" # provide a custom path
 ```
 
-Make sure to configure the webhooks at mux.com to point to `https://yourwebsite.com/mux/events`.
+Remember to configure the webhooks at mux.com to point to `https://yourwebsite.com/mux/events`.
 
 ## Usage
 
