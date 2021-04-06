@@ -1,7 +1,9 @@
 # Next
 
-- Refactor Mux::Event class to Dry::Struct
-- add Rubocop and clean up all files
+# 0.2.1
+
+- Refactored `Mux::Event` class to `Dry::Struct`
+- Added Rubocop and clean up all files
 
 # 0.2.0
 
