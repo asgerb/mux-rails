@@ -22,6 +22,10 @@ or add this line to your application's Gemfile:
 gem 'mux-rails'
 ```
 
+and run `bundle install`.
+
+Mount the engine in your routes:
+
 ```ruby
 # config/routes.rb
 mount Mux::Engine, at: "/mux" # provide a custom path
