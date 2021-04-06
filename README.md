@@ -1,5 +1,6 @@
 # Mux::Rails
 
+![Gem Version](https://badge.fury.io/rb/mux-rails.svg)
 ![Ruby](https://github.com/asgerb/mux-rails/workflows/Ruby/badge.svg)
 
 A Rails Engine for working with [Mux](https://mux.com/).
