@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dry-types", "~> 1.5"
   spec.add_dependency "mux_ruby", "~> 3.0"
 
-  spec.add_development_dependency "minitest", ">= 5.0"
+  spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-rails"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "rubocop-rails_config"
