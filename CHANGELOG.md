@@ -1,5 +1,7 @@
 # Next
 
+- Upgrade to `mux_ruby ~> 3.0`
+
 # 0.2.1
 
 - Refactored `Mux::Event` class to `Dry::Struct`
