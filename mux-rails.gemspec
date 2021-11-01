@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", ">= 5.0"
-  spec.add_dependency "mux_ruby", "~> 1.8.0"
-  spec.add_dependency "dry-struct", "~> 1.0"
-  spec.add_dependency "dry-types", "~> 1.4"
+  spec.add_dependency "dry-struct", "~> 1.4"
+  spec.add_dependency "dry-types", "~> 1.5"
+  spec.add_dependency "mux_ruby", "~> 3.0"
 
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "minitest-rails"
