@@ -1,5 +1,7 @@
 # Next
 
+# 1.0.0
+
 - Upgrade to `mux_ruby ~> 3.0`
 
 # 0.2.1
