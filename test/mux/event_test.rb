@@ -27,6 +27,10 @@ describe Mux::Event do
     _(event.data).must_respond_to :mp4_support
     _(event.data).must_respond_to :status
 
+    _(event.data).must_respond_to :stream_key
+    _(event.data).must_respond_to :reconnect_window
+    _(event.data).must_respond_to :latency_mode
+
     _(event.data.playback_ids.sample).must_respond_to :id
     _(event.data.playback_ids.sample).must_respond_to :policy
 
