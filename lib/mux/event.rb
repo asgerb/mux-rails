@@ -44,10 +44,10 @@ module Mux
       end
 
       attribute? :tracks, Types::Array do
-        attribute :id, Types::Coercible::String
-        attribute :type, Types::Coercible::String
+        attribute? :id, Types::Coercible::String
+        attribute? :type, Types::Coercible::String
 
-        attribute :duration, Types::Coercible::Float
+        attribute? :duration, Types::Coercible::Float
 
         # when type = "video"
         attribute? :max_width, Types::Coercible::Integer
