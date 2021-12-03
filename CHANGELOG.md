@@ -1,5 +1,9 @@
 # Next
 
+# 1.0.1
+
+- Added support for live streams (@tomasc)
+
 # 1.0.0
 
 - Upgrade to `mux_ruby ~> 3.0`
