@@ -34,6 +34,10 @@ module Mux
       attribute? :max_stored_resolution, Types::Coercible::String
       attribute? :mp4_support, Types::Coercible::String
 
+      attribute? :stream_key, Types::Coercible::String
+      attribute? :reconnect_window, Types::Coercible::Integer
+      attribute? :latency_mode, Types::Coercible::String
+
       attribute? :playback_ids, Types::Array do
         attribute :id, Types::Coercible::String
         attribute :policy, Types::Coercible::String
