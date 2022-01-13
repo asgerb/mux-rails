@@ -1,5 +1,9 @@
 # Next
 
+# 1.0.2
+
+- Made tracks attributes optional (@tomasc)
+
 # 1.0.1
 
 - Added support for live streams (@tomasc)
