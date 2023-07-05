@@ -38,6 +38,8 @@ module Mux
       attribute? :reconnect_window, Types::Coercible::Integer
       attribute? :latency_mode, Types::Coercible::String
 
+      attribute? :live_stream_id, Types::Coercible::String
+
       attribute? :playback_ids, Types::Array do
         attribute :id, Types::Coercible::String
         attribute :policy, Types::Coercible::String
