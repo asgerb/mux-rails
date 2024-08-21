@@ -1,5 +1,8 @@
 # Next
 
+- Add `live_stream_id` field to `Event`
+- Add field to example test payload (`video.asset.ready.json`)
+
 # 1.0.2
 
 - Made tracks attributes optional (@tomasc)
