@@ -17,7 +17,7 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
-class MiniTest::Spec
+class Minitest::Spec
   include ActiveJob::TestHelper
   include ActiveSupport::Testing::TimeHelpers
   include ActiveSupport::Testing::Assertions
