@@ -35,9 +35,9 @@ describe Mux::Notifications do
 
   describe Mux::Notifications::SubscriberWrapper do
     it "calls the subscriber with the last argument" do
-      subscriber = MiniTest::Mock.new
+      subscriber = Minitest::Mock.new
 
-      subscriber.expect(:call, true, [:last])
+      subscriber.expect(:call, true, [ :last ])
 
       Mux::Notifications::SubscriberWrapper.call(subscriber).call(:first, :last)
     end
