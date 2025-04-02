@@ -31,6 +31,8 @@ describe Mux::Event do
     _(event.data).must_respond_to :reconnect_window
     _(event.data).must_respond_to :latency_mode
 
+    _(event.data).must_respond_to :live_stream_id
+
     _(event.data.playback_ids.sample).must_respond_to :id
     _(event.data.playback_ids.sample).must_respond_to :policy
 
