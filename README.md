@@ -85,17 +85,17 @@ Using a subscriber with a block we can listen to incoming events from Mux and do
 
 Mux::Notifications.subscribe "video.asset.created" do |event|
   # handle asset created
-  # event.id == mux_asset_id
+  # event.object.id == mux_asset_id
 end
 
 Mux::Notifications.subscribe "video.asset.ready" do |event|
   # handle asset ready
-  # event.id == mux_asset_id
+  # event.object.id == mux_asset_id
 end
 
 Mux::Notifications.subscribe "video.asset.deleted" do |event|
   # handle asset deleted
-  # event.id == mux_asset_id
+  # event.object.id == mux_asset_id
 end
 ```
 

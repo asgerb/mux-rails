@@ -25,7 +25,7 @@ module Mux
     attribute :data do
       attribute :id, Types::Coercible::String
       attribute :status, Types::Coercible::String
-      attribute :created_at, Types::Coercible::Integer
+      attribute :created_at?, Types::Coercible::Integer
 
       attribute? :aspect_ratio, Types::Coercible::String
       attribute? :duration, Types::Coercible::Float
@@ -39,6 +39,7 @@ module Mux
       attribute? :latency_mode, Types::Coercible::String
 
       attribute? :live_stream_id, Types::Coercible::String
+      attribute? :asset_id, Types::Coercible::String
 
       attribute? :playback_ids, Types::Array do
         attribute :id, Types::Coercible::String

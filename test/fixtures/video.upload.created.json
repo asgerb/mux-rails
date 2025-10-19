@@ -1,0 +1,30 @@
+{
+  "type": "video.upload.created",
+  "request_id": null,
+  "object": {
+    "type": "upload",
+    "id": "zQgndfmibrDyYz51our2KThQDGEkA2aP"
+  },
+  "id": "11ea3195-d0f6-a19d-7294-d96f60ee3143",
+  "environment": {
+    "name": "Demo pages",
+    "id": "j0863n"
+  },
+  "data": {
+    "url": "https://aaa.bbb.ccc.mux.com/upload/zQgndfmibrDyYz51our2KThQDGEkA2aP?token=eee",
+    "timeout": 3600,
+    "status": "waiting",
+    "new_asset_settings": {
+      "playback_policies": [
+        "public"
+      ],
+      "mp4_support": "standard"
+    },
+    "id": "zQgndfmibrDyYz51our2KThQDGEkA2aP",
+    "cors_origin": "*"
+  },
+  "created_at": "2025-10-18T10:43:04.880000Z",
+  "attempts": [],
+  "accessor_source": null,
+  "accessor": null
+}
